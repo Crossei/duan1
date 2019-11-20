@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2019 8:29:19 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Nhanvien" table="nhanvien" schema="dbo" catalog="Laptop" optimistic-lock="version">
+        <id name="manv" type="serializable">
+            <column name="manv" />
+            <generator class="assigned" />
+        </id>
+        <property name="tennv" type="serializable">
+            <column name="tennv" />
+        </property>
+        <property name="ngaysinh" type="date">
+            <column name="ngaysinh" length="10" />
+        </property>
+        <property name="sodienthoai" type="java.lang.Integer">
+            <column name="sodienthoai" />
+        </property>
+        <property name="luong" type="java.lang.Integer">
+            <column name="luong" />
+        </property>
+        <property name="diachi" type="serializable">
+            <column name="diachi" />
+        </property>
+        <property name="chucvu" type="serializable">
+            <column name="chucvu" />
+        </property>
+        <one-to-one name="dangnhap" class="entities.Dangnhap"></one-to-one>
+        <set name="hoadons" table="hoadon" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="manv" not-null="true" />
+            </key>
+            <one-to-many class="entities.Hoadon" />
+        </set>
+    </class>
+</hibernate-mapping>

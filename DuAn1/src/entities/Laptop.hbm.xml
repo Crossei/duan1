@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2019 8:29:19 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Laptop" table="laptop" schema="dbo" catalog="Laptop" optimistic-lock="version">
+        <id name="malaptop" type="serializable">
+            <column name="malaptop" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hanglaptop" class="entities.Hanglaptop" fetch="select">
+            <column name="mahang" not-null="true" />
+        </many-to-one>
+        <many-to-one name="nhacungcap" class="entities.Nhacungcap" fetch="select">
+            <column name="manhacungcap" not-null="true" />
+        </many-to-one>
+        <property name="tenlaptop" type="serializable">
+            <column name="tenlaptop" />
+        </property>
+        <property name="soluong" type="java.lang.Integer">
+            <column name="soluong" />
+        </property>
+        <property name="ngaynhap" type="date">
+            <column name="ngaynhap" length="10" />
+        </property>
+        <property name="giatien" type="java.lang.Integer">
+            <column name="giatien" />
+        </property>
+        <set name="hoadonchitiets" table="hoadonchitiet" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="malaptop" not-null="true" />
+            </key>
+            <one-to-many class="entities.Hoadonchitiet" />
+        </set>
+    </class>
+</hibernate-mapping>

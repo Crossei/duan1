@@ -48,5 +48,13 @@ Contributor(s):
     <property name="hibernate.dialect">org.hibernate.dialect.DB2Dialect</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="entities/Hanglaptop.hbm.xml"/>
+    <mapping resource="entities/Laptop.hbm.xml"/>
+    <mapping resource="entities/Hoadonchitiet.hbm.xml"/>
+    <mapping resource="entities/Hoadon.hbm.xml"/>
+    <mapping resource="entities/Khachhang.hbm.xml"/>
+    <mapping resource="entities/Nhanvien.hbm.xml"/>
+    <mapping resource="entities/Dangnhap.hbm.xml"/>
+    <mapping resource="entities/Nhacungcap.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
