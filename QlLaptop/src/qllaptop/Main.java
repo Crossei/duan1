@@ -5,6 +5,9 @@
  */
 package qllaptop;
 
+import java.awt.Dimension;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Nguyen Van Dien
@@ -16,6 +19,9 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+
+        
     }
 
     /**
@@ -56,6 +62,11 @@ public class Main extends javax.swing.JFrame {
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Đăng nhập");
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jCheckBoxMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -67,6 +78,20 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         Dangnhap f  =new Dangnhap();
+        
+        jDesktopPane1.add(f);
+         Dimension desktopSize = this.getSize();
+    Dimension jInternalFrameSize = f.getSize();
+    int width = (desktopSize.width - jInternalFrameSize.width) / 2;
+    int height = (desktopSize.height - jInternalFrameSize.height) / 2;
+    f.setLocation(width, height);
+    f.setBorder(null);
+    f.setVisible(true);
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
