@@ -5,9 +5,6 @@
  */
 package Form;
 
-import java.awt.Dimension;
-import javax.swing.JFrame;
-
 /**
  *
  * @author Nguyen Van Dien
@@ -19,9 +16,6 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-
-        
     }
 
     /**
@@ -65,16 +59,6 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Hệ Thống");
 
-<<<<<<< HEAD:QlLaptop/src/qllaptop/Main.java
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Đăng nhập");
-        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jCheckBoxMenuItem1);
-=======
         jMenuItem1.setText("Bán Hàng");
         jMenu1.add(jMenuItem1);
 
@@ -85,7 +69,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem2);
->>>>>>> 18fd94536c172dea2d428258554ca5b2bdf95e2f:DuAnnn/src/Form/Main.java
 
         jMenuBar1.add(jMenu1);
 
@@ -110,25 +93,9 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD:QlLaptop/src/qllaptop/Main.java
-    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
-        // TODO add your handling code here:
-         Dangnhap f  =new Dangnhap();
-        
-        jDesktopPane1.add(f);
-         Dimension desktopSize = this.getSize();
-    Dimension jInternalFrameSize = f.getSize();
-    int width = (desktopSize.width - jInternalFrameSize.width) / 2;
-    int height = (desktopSize.height - jInternalFrameSize.height) / 2;
-    f.setLocation(width, height);
-    f.setBorder(null);
-    f.setVisible(true);
-    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
-=======
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
->>>>>>> 18fd94536c172dea2d428258554ca5b2bdf95e2f:DuAnnn/src/Form/Main.java
 
     /**
      * @param args the command line arguments
