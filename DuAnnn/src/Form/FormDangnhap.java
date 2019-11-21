@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qllaptop;
+package Form;
 
 /**
  *
  * @author Nguyen Van Dien
  */
-public class Dangnhap extends javax.swing.JInternalFrame {
+public class FormDangnhap extends javax.swing.JFrame {
 
     /**
-     * Creates new form Dangnhap
+     * Creates new form FormDangnhap
      */
-    public Dangnhap() {
+    public FormDangnhap() {
         initComponents();
     }
 
@@ -27,20 +27,22 @@ public class Dangnhap extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblUserName = new javax.swing.JLabel();
         lblRegisterTitle = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
-        lblUserName = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
+        lblPassword = new javax.swing.JLabel();
         chkbNhoMatKhau = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblUserName.setText("Tên đăng nhập");
+
         lblRegisterTitle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblRegisterTitle.setForeground(new java.awt.Color(51, 102, 255));
         lblRegisterTitle.setText("QUẢN LÝ CỬA HÀNG LAPTOP");
-
-        lblUserName.setText("Tên đăng nhập");
 
         lblPassword.setText("Mật khẩu");
 
@@ -57,6 +59,11 @@ public class Dangnhap extends javax.swing.JInternalFrame {
 
         jButton2.setForeground(new java.awt.Color(255, 102, 0));
         jButton2.setText("Đăng nhập");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,7 +86,7 @@ public class Dangnhap extends javax.swing.JInternalFrame {
                                 .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
                                 .addComponent(txtPassword))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)))))
                 .addGap(52, 52, 52))
@@ -103,7 +110,7 @@ public class Dangnhap extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,6 +120,46 @@ public class Dangnhap extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chkbNhoMatKhauActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      Main mn = new Main();
+      mn.show();
+      this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FormDangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FormDangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FormDangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FormDangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FormDangnhap().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox chkbNhoMatKhau;

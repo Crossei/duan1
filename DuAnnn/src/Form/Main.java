@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package qllaptop;
+package Form;
 
 /**
  *
@@ -30,8 +30,13 @@ public class Main extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,11 +44,11 @@ public class Main extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1430, Short.MAX_VALUE)
+            .addGap(0, 1293, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
 
         getContentPane().add(jDesktopPane1, java.awt.BorderLayout.CENTER);
@@ -52,21 +57,45 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1.setAlignmentX(1.0F);
         jMenuBar1.setAlignmentY(1.0F);
 
-        jMenu1.setText("Tài khoản");
+        jMenu1.setText("Hệ Thống");
 
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Đăng nhập");
-        jMenu1.add(jCheckBoxMenuItem1);
+        jMenuItem1.setText("Bán Hàng");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Sản phẩm");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Thoát");
+        jMenu2.setText("Quản Lí");
+
+        jMenuItem3.setText("Quản Lí Sản Phẩm");
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem4.setText("Quản Lí Khách Hàng");
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Quản Lí Nhân viên");
+        jMenu2.add(jMenuItem5);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Thoát");
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,10 +133,15 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
