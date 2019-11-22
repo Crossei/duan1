@@ -16,6 +16,7 @@ public class BanHang extends javax.swing.JInternalFrame {
      */
     public BanHang() {
         initComponents();
+        
     }
 
     /**
@@ -321,6 +322,8 @@ public class BanHang extends javax.swing.JInternalFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
 
+        tblSanPham1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tblSanPham1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tblSanPham1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -340,6 +343,11 @@ public class BanHang extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
         ));
+        tblSanPham1.setGridColor(new java.awt.Color(255, 255, 255));
+        tblSanPham1.setRequestFocusEnabled(false);
+        tblSanPham1.setRowHeight(25);
+        tblSanPham1.setSelectionBackground(new java.awt.Color(252, 252, 207));
+        tblSanPham1.setSelectionForeground(new java.awt.Color(87, 188, 242));
         tblSanPham1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblSanPham1MouseClicked(evt);
