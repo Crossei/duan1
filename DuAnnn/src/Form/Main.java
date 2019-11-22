@@ -16,6 +16,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -37,6 +38,8 @@ public class Main extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        Dang_Xuat = new javax.swing.JMenuItem();
+        Thoat = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,9 +78,19 @@ public class Main extends javax.swing.JFrame {
         jMenu2.setText("Quản Lí");
 
         jMenuItem3.setText("Quản Lí Sản Phẩm");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Quản Lí Khách Hàng");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Quản Lí Nhân viên");
@@ -86,6 +99,23 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Thoát");
+
+        Dang_Xuat.setText("Đăng xuất");
+        Dang_Xuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Dang_XuatActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Dang_Xuat);
+
+        Thoat.setText("Thoát");
+        Thoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ThoatActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Thoat);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -96,6 +126,28 @@ public class Main extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void Dang_XuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dang_XuatActionPerformed
+        FormDangNhap fd = new FormDangNhap();
+        fd.show();
+        this.dispose();
+    }//GEN-LAST:event_Dang_XuatActionPerformed
+
+    private void ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThoatActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_ThoatActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        QuanLiSanPham sp = new QuanLiSanPham();
+        jDesktopPane1.add(sp);
+        sp.show();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        QuanLiKhachHang kh = new QuanLiKhachHang();
+        jDesktopPane1.add(kh);
+        kh.show();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +185,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Dang_Xuat;
+    private javax.swing.JMenuItem Thoat;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

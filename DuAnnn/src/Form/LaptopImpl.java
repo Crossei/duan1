@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Form;
 
 /**
  *
  * @author Nguyen Van Dien
  */
-public class DAO {
-    
+public interface LaptopImpl {
+    void timkiem();
+    void loadLaptop();
 }

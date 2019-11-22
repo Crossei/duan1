@@ -5,17 +5,23 @@
  */
 package Form;
 
+import Dao.LaptopDao;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Laptop;
+
 /**
  *
  * @author Nguyen Van Dien
  */
-public class QuanLiSanPham extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form QuanLiSanPham
-     */
+public class QuanLiSanPham extends javax.swing.JInternalFrame implements LaptopImpl{
+    String head[] = {"Mã Laptop","Tên Laptop","Mã nhà cung cấp","Mã hãng","Số lượng","Ngày nhập","Giá tiền"};
+    DefaultTableModel model1 = new DefaultTableModel(head,0);
+    List<Laptop> list;
     public QuanLiSanPham() {
         initComponents();
+        loadLaptop();
     }
 
     /**
@@ -32,7 +38,7 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblSanPham = new javax.swing.JTable();
+        tblLaptop = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         lblMaSanPham_SanPham = new javax.swing.JLabel();
         lblTenSanPham_SanPham = new javax.swing.JLabel();
@@ -93,7 +99,7 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
-        tblSanPham.setModel(new javax.swing.table.DefaultTableModel(
+        tblLaptop.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -112,12 +118,12 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
         ));
-        tblSanPham.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblLaptop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblSanPhamMouseClicked(evt);
+                tblLaptopMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblSanPham);
+        jScrollPane1.setViewportView(tblLaptop);
 
         lblMaSanPham_SanPham.setText("Mã Sản Phẩm");
 
@@ -481,9 +487,8 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(54, 54, 54)
@@ -593,9 +598,9 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPhamMouseClicked
+    private void tblLaptopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaptopMouseClicked
 
-    }//GEN-LAST:event_tblSanPhamMouseClicked
+    }//GEN-LAST:event_tblLaptopMouseClicked
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
@@ -689,9 +694,30 @@ public class QuanLiSanPham extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTonKho_SanPham1;
     private javax.swing.JLabel lblTonKho_SanPham2;
     private javax.swing.JLabel lblTonKho_SanPham3;
-    private javax.swing.JTable tblSanPham;
+    private javax.swing.JTable tblLaptop;
     private javax.swing.JTable tblSanPham1;
     private javax.swing.JTable tblSanPham2;
     private javax.swing.JTextField txtTonKho_SanPham3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void timkiem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void loadLaptop() {
+        try {
+            model1 = (DefaultTableModel) tblLaptop.getModel();
+            model1.setRowCount(0);
+            for (Laptop lt : LaptopDao.LayThongTinLT("")) {
+                Object a[] = new Object[]{
+                   lt.getMalaptop(),lt.getTenlaptop(),lt.getNhacungcap(),lt.getHanglaptop(),lt.getSoluong(),lt.getNgaynhap(),lt.getGiatien()
+                };
+                model1.addRow(a);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Lỗi load bảng Sản Phẩm  " + e, "Thông báo!", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
