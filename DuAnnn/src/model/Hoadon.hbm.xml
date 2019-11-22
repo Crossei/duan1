@@ -6,7 +6,7 @@
     <class name="model.Hoadon" table="hoadon" schema="dbo" catalog="Laptop" optimistic-lock="version">
         <id name="mahd" type="int">
             <column name="mahd" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="khachhang" class="model.Khachhang" fetch="select">
             <column name="makh" not-null="true" />

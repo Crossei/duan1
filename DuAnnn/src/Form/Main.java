@@ -16,7 +16,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+<<<<<<< HEAD
         this.setLocationRelativeTo(null);
+=======
+        
+>>>>>>> 9ffb9cc3eb026a34098ac4e912fea0adf988d5e7
     }
 
     /**
@@ -37,6 +41,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         Dang_Xuat = new javax.swing.JMenuItem();
         Thoat = new javax.swing.JMenuItem();
@@ -62,7 +67,13 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Hệ Thống");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Clien list.png"))); // NOI18N
         jMenuItem1.setText("Bán Hàng");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Sản phẩm");
@@ -98,6 +109,9 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu4.setText("Đổi Mật Khẩu");
+        jMenuBar1.add(jMenu4);
+
         jMenu3.setText("Thoát");
 
         Dang_Xuat.setText("Đăng xuất");
@@ -127,6 +141,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+<<<<<<< HEAD
     private void Dang_XuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dang_XuatActionPerformed
         FormDangNhap fd = new FormDangNhap();
         fd.show();
@@ -148,6 +163,14 @@ public class Main extends javax.swing.JFrame {
         jDesktopPane1.add(kh);
         kh.show();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+=======
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        BanHang bh = new BanHang();
+        jDesktopPane1.add(bh);
+        bh.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+>>>>>>> 9ffb9cc3eb026a34098ac4e912fea0adf988d5e7
 
     /**
      * @param args the command line arguments
@@ -191,6 +214,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
