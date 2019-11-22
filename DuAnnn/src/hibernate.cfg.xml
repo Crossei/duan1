@@ -48,7 +48,7 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
-    <property name="hibernate.connection.password">dien@123</property>
+    <property name="hibernate.connection.password">sa</property>
     <mapping resource="model/Hanglaptop.hbm.xml"/>
     <mapping resource="model/Laptop.hbm.xml"/>
     <mapping resource="model/Nhanvien.hbm.xml"/>
