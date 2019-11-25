@@ -102,11 +102,6 @@ public class FormDangNhap extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Đăng nhập");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setBackground(new java.awt.Color(237, 67, 64));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -182,12 +177,15 @@ public class FormDangNhap extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+<<<<<<< HEAD
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Mains mn = new Mains();
        mn.show();
        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+=======
+>>>>>>> 183c0bc042e415513ba05040f2d8c29a7e9f0b68
     /**
      * @param args the command line arguments
      */
