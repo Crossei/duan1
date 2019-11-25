@@ -5,22 +5,23 @@
  */
 package Form;
 
+import Form.BanHang;
+import Form.QuanLiKhachHang;
+
 /**
  *
  * @author Nguyen Van Dien
  */
-public class Main extends javax.swing.JFrame {
+public class Mains extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Mains() {
         initComponents();
-<<<<<<< HEAD
+
         this.setLocationRelativeTo(null);
-=======
-        
->>>>>>> 9ffb9cc3eb026a34098ac4e912fea0adf988d5e7
+
     }
 
     /**
@@ -67,7 +68,6 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Hệ Thống");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Clien list.png"))); // NOI18N
         jMenuItem1.setText("Bán Hàng");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,25 +137,21 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        BanHang bh = new BanHang();
+        jDesktopPane1.add(bh);
+        bh.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-<<<<<<< HEAD
-    private void Dang_XuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dang_XuatActionPerformed
-        FormDangNhap fd = new FormDangNhap();
-        fd.show();
-        this.dispose();
-    }//GEN-LAST:event_Dang_XuatActionPerformed
-
-    private void ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThoatActionPerformed
-       System.exit(0);
-    }//GEN-LAST:event_ThoatActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        QuanLiSanPham sp = new QuanLiSanPham();
-        jDesktopPane1.add(sp);
-        sp.show();
+//        Form.Quanlysanpham sp = new Form.Quanlysanpham();
+//        jDesktopPane1.add(sp);
+//        sp.show();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -163,14 +159,18 @@ public class Main extends javax.swing.JFrame {
         jDesktopPane1.add(kh);
         kh.show();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
-=======
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        BanHang bh = new BanHang();
-        jDesktopPane1.add(bh);
-        bh.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
->>>>>>> 9ffb9cc3eb026a34098ac4e912fea0adf988d5e7
+
+    private void Dang_XuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dang_XuatActionPerformed
+//        FormDangNhap fd = new FormDangNhap();
+//        fd.show();
+//        this.dispose();
+    }//GEN-LAST:event_Dang_XuatActionPerformed
+
+    private void ThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThoatActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_ThoatActionPerformed
+
+
 
     /**
      * @param args the command line arguments
@@ -189,20 +189,23 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mains.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mains.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mains.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mains.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new Mains().setVisible(true);
             }
         });
     }
