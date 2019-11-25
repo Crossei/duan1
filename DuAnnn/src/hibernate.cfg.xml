@@ -48,11 +48,9 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
-<<<<<<< HEAD
-    <property name="hibernate.connection.password">123</property>
-=======
+
     <property name="hibernate.connection.password">sa</property>
->>>>>>> ce7957c9b7a84a2829ffc7bd9bf1c4d36d0c93d7
+
     <mapping resource="model/Hanglaptop.hbm.xml"/>
     <mapping resource="model/Laptop.hbm.xml"/>
     <mapping resource="model/Nhanvien.hbm.xml"/>
