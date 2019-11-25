@@ -177,15 +177,14 @@ public class FormDangNhap extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-<<<<<<< HEAD
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Mains mn = new Mains();
        mn.show();
        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-=======
->>>>>>> 183c0bc042e415513ba05040f2d8c29a7e9f0b68
+
     /**
      * @param args the command line arguments
      */
