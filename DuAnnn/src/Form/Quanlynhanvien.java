@@ -5,17 +5,24 @@
  */
 package Form;
 
+import javax.swing.table.DefaultTableModel;
+import java.util.*;
+import model.*;
+import Dao.*;
 /**
  *
  * @author Nguyen Van Dien
  */
-public class Quanlynhanvien extends javax.swing.JInternalFrame {
+public class Quanlynhanvien extends javax.swing.JInternalFrame implements  NhanvienImpl{
 
+    
+    private NhanvienDAO nvd = new NhanvienDAO();
     /**
      * Creates new form BanHang
      */
     public Quanlynhanvien() {
         initComponents();
+        LoadNhanVien();
         
     }
 
@@ -380,7 +387,6 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame {
         jLabel11.setText("Tìm kiếm:");
 
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Search.png"))); // NOI18N
         jButton11.setText("Tìm kiếm");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -490,19 +496,15 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         btnmoi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnmoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/AddFile_32x32.png"))); // NOI18N
         btnmoi.setText("Làm mới");
 
         btnthanhtoan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnthanhtoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Calculator.png"))); // NOI18N
         btnthanhtoan.setText("Thanh toán");
 
         btnxoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnxoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Delete.png"))); // NOI18N
         btnxoa.setText("Xóa");
 
         btnthem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnthem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Add.png"))); // NOI18N
         btnthem.setText("Thêm");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -537,7 +539,7 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(924, Short.MAX_VALUE)
+                .addContainerGap(952, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -553,7 +555,7 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addContainerGap(424, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 361, Short.MAX_VALUE)
@@ -655,6 +657,53 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame {
     private javax.swing.JTable tblSanPham1;
     private javax.swing.JTextField txtTonKho_SanPham3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void LoadNhanVien() {
+        DefaultTableModel model = new DefaultTableModel() ;
+        model.addColumn("manv");
+        model.addColumn("tennv");
+        model.addColumn("ngaysinh");
+        model.addColumn("sodienthoai");
+        model.addColumn("luong");
+        model.addColumn("diachi");
+         model.addColumn("chucvu");
+         for (Nhanvien nv : this.nvd.findAll()){
+             Vector vector = new Vector();
+             vector.add(nv.getManv());
+             vector.add(nv.getTennv());
+             vector.add(nv.getNgaysinh());
+             vector.add(nv.getSodienthoai());
+             vector.add(nv.getLuong());
+             vector.add(nv.getDiachi());
+             vector.add(nv.getChucvu());
+             model.addRow(vector);
+         }
+         tblSanPham1.setModel(model);
+     
+        
+        
+    }
+
+    @Override
+    public void Them() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Sua() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Xoa() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Search() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
    
 }

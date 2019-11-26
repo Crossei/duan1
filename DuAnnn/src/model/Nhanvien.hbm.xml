@@ -23,8 +23,8 @@
         <property name="diachi" type="serializable">
             <column name="diachi" />
         </property>
-        <property name="gioitinh" type="serializable">
-            <column name="gioitinh" />
+        <property name="chucvu" type="serializable">
+            <column name="chucvu" />
         </property>
         <one-to-one name="dangnhap" class="model.Dangnhap"></one-to-one>
         <set name="hoadons" table="hoadon" inverse="true" lazy="true" fetch="select">

@@ -19,7 +19,7 @@ public class Nhanvien  implements java.io.Serializable {
      private Integer sodienthoai;
      private Integer luong;
      private String diachi;
-     private String gioitinh;
+     private String chucvu;
      private Dangnhap dangnhap;
      private Set<Hoadon> hoadons = new HashSet<Hoadon>(0);
 
@@ -30,14 +30,14 @@ public class Nhanvien  implements java.io.Serializable {
     public Nhanvien(String manv) {
         this.manv = manv;
     }
-    public Nhanvien(String manv, String tennv, Date ngaysinh, Integer sodienthoai, Integer luong, String diachi, String gioitinh, Dangnhap dangnhap, Set<Hoadon> hoadons) {
+    public Nhanvien(String manv, String tennv, Date ngaysinh, Integer sodienthoai, Integer luong, String diachi, String chucvu, Dangnhap dangnhap, Set<Hoadon> hoadons) {
        this.manv = manv;
        this.tennv = tennv;
        this.ngaysinh = ngaysinh;
        this.sodienthoai = sodienthoai;
        this.luong = luong;
        this.diachi = diachi;
-       this.gioitinh = gioitinh;
+       this.chucvu = chucvu;
        this.dangnhap = dangnhap;
        this.hoadons = hoadons;
     }
@@ -84,12 +84,12 @@ public class Nhanvien  implements java.io.Serializable {
     public void setDiachi(String diachi) {
         this.diachi = diachi;
     }
-    public String getGioitinh() {
-        return this.gioitinh;
+    public String getChucvu() {
+        return this.chucvu;
     }
     
-    public void setGioitinh(String gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setChucvu(String chucvu) {
+        this.chucvu = chucvu;
     }
     public Dangnhap getDangnhap() {
         return this.dangnhap;
