@@ -7,8 +7,9 @@ package Form;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.*;
-import model.*;
+import entities.*;
 import Dao.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Nguyen Van Dien
@@ -17,12 +18,15 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
 
     
     private NhanvienDAO nvd = new NhanvienDAO();
+     List<Nhanvien> list;
+    DefaultTableModel model = new DefaultTableModel();
+    int index;
     /**
      * Creates new form BanHang
      */
     public Quanlynhanvien() {
         initComponents();
-        LoadNhanVien();
+        LoadNhanvien();
         
     }
 
@@ -659,51 +663,47 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void LoadNhanVien() {
-        DefaultTableModel model = new DefaultTableModel() ;
-        model.addColumn("manv");
-        model.addColumn("tennv");
-        model.addColumn("ngaysinh");
-        model.addColumn("sodienthoai");
-        model.addColumn("luong");
-        model.addColumn("diachi");
-         model.addColumn("chucvu");
-         for (Nhanvien nv : this.nvd.findAll()){
-             Vector vector = new Vector();
-             vector.add(nv.getManv());
-             vector.add(nv.getTennv());
-             vector.add(nv.getNgaysinh());
-             vector.add(nv.getSodienthoai());
-             vector.add(nv.getLuong());
-             vector.add(nv.getDiachi());
-             vector.add(nv.getChucvu());
-             model.addRow(vector);
-         }
-         tblSanPham1.setModel(model);
+    public void LoadNhanvien() {
+         try {
+            model = (DefaultTableModel) tblSanPham1.getModel();
+            model.setRowCount(0);
+            list = NhanvienDAO.ListDanhsach("");
+            for (Nhanvien nv : list) {
+                Object[] a = new Object[]{
+                   nv.getManv(), nv.getTennv(), nv.getLuong()
+                };
+
+                model.addRow(a);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, " Lỗi  " + e);
+
+        }
      
-        
-        
     }
 
     @Override
-    public void Them() {
+    public void them() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Sua() {
+    public void sua() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Xoa() {
+    public void xoa() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Search() {
+    public void search() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+  
    
 }

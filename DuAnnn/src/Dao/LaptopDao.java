@@ -6,13 +6,13 @@
 package Dao;
 
 import java.util.List;
-import model.Laptop;
+import entities.Laptop;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import util.NewHibernateUtil;
+import Util.NewHibernateUtil;
 
 /**
  *

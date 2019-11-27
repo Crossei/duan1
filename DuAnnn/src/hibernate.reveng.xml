@@ -40,16 +40,16 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="Laptop" match-schema="dbo"/>
+  <schema-selection match-catalog="QLLT" match-schema="dbo"/>
   <type-mapping>
         <sql-type jdbc-type="NVARCHAR" hibernate-type="string"/>
     </type-mapping>
+  <table-filter match-name="hoadonchitiet"/>
   <table-filter match-name="hoadon"/>
   <table-filter match-name="dangnhap"/>
-  <table-filter match-name="nhacungcap"/>
-  <table-filter match-name="hoadonchitiet"/>
-  <table-filter match-name="nhanvien"/>
   <table-filter match-name="hanglaptop"/>
+  <table-filter match-name="nhanvien"/>
   <table-filter match-name="laptop"/>
   <table-filter match-name="khachhang"/>
+  <table-filter match-name="nhacungcap"/>
 </hibernate-reverse-engineering>

@@ -154,7 +154,6 @@ public class Quanlysanpham extends javax.swing.JInternalFrame {
         jLabel28.setText("Tìm kiếm:");
 
         jButton21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Search.png"))); // NOI18N
         jButton21.setText("Tìm kiếm");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,11 +164,9 @@ public class Quanlysanpham extends javax.swing.JInternalFrame {
         jPanel10.setBackground(new java.awt.Color(204, 204, 255));
 
         jButton22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/AddFile_32x32.png"))); // NOI18N
         jButton22.setText("Làm mới");
 
         jButton23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Edit - Copy.png"))); // NOI18N
         jButton23.setText("Sửa");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,11 +175,9 @@ public class Quanlysanpham extends javax.swing.JInternalFrame {
         });
 
         jButton24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Delete.png"))); // NOI18N
         jButton24.setText("Xóa");
 
         jButton25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Add.png"))); // NOI18N
         jButton25.setText("Thêm");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -309,7 +304,7 @@ public class Quanlysanpham extends javax.swing.JInternalFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
