@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2019 8:40:32 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Dangnhap" table="dangnhap" schema="dbo" catalog="QLLT" optimistic-lock="version">
+        <id name="username" type="string">
+            <column name="username" />
+            <generator class="foreign">
+                <param name="property">nhanvien</param>
+            </generator>
+        </id>
+        <one-to-one name="nhanvien" class="model.Nhanvien" constrained="true"></one-to-one>
+        <property name="passwords" type="string">
+            <column name="passwords" />
+        </property>
+        <property name="chucvu" type="string">
+            <column name="chucvu" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -45,17 +45,9 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=QLLT</property>
     <property name="hibernate.connection.username">sa</property>
     <property name="hibernate.connection.password">sa</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-    <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
-    <mapping resource="entities/Dangnhap.hbm.xml"/>
-    <mapping resource="entities/Laptop.hbm.xml"/>
-    <mapping resource="entities/Nhacungcap.hbm.xml"/>
-    <mapping resource="entities/Khachhang.hbm.xml"/>
-    <mapping resource="entities/Nhanvien.hbm.xml"/>
-    <mapping resource="entities/Hoadon.hbm.xml"/>
-    <mapping resource="entities/Hoadonchitiet.hbm.xml"/>
-    <mapping resource="entities/Hanglaptop.hbm.xml"/>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+    <property name="hibernate.show_sql">true</property>
   </session-factory>
 </hibernate-configuration>

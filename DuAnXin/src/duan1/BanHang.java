@@ -3,30 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Form;
+package duan1;
 
-import javax.swing.table.DefaultTableModel;
-import java.util.*;
-import entities.*;
-import Dao.*;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Nguyen Van Dien
  */
-public class Quanlynhanvien extends javax.swing.JInternalFrame implements  NhanvienImpl{
+public class BanHang extends javax.swing.JInternalFrame {
 
-    
-    private NhanvienDAO nvd = new NhanvienDAO();
-     List<Nhanvien> list;
-    DefaultTableModel model = new DefaultTableModel();
-    int index;
     /**
      * Creates new form BanHang
      */
-    public Quanlynhanvien() {
+    public BanHang() {
         initComponents();
-        LoadNhanvien();
         
     }
 
@@ -76,6 +65,7 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         jTextField8 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblSanPham1 = new javax.swing.JTable();
         jTextField9 = new javax.swing.JTextField();
@@ -89,12 +79,12 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         jTextField13 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
-        jTextField14 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        btnmoi = new javax.swing.JButton();
-        btnthanhtoan = new javax.swing.JButton();
-        btnxoa = new javax.swing.JButton();
-        btnthem = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -331,16 +321,18 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel2.setText("Quản Lí Nhân Viên");
+        jLabel2.setText("Quản Lí Bán Hàng");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Mã nhân viên");
+        jLabel3.setText("Mã hóa đơn");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Số điện thoại");
+        jLabel4.setText("Mã khách hàng");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Lương ");
+        jLabel5.setText("Số Lượng");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
 
         tblSanPham1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tblSanPham1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -376,21 +368,22 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         jScrollPane2.setViewportView(tblSanPham1);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Tên nhân viên");
+        jLabel6.setText("Mã nhân viên");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("Ngày Sinh");
+        jLabel7.setText("Mã laptop");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Địa chỉ");
+        jLabel8.setText("Ngày bán");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Chức Vụ");
+        jLabel10.setText("Thành tiền");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Tìm kiếm:");
 
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Search.png"))); // NOI18N
         jButton11.setText("Tìm kiếm");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,7 +396,7 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 418, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(384, 384, 384))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -437,18 +430,19 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel5))
                                 .addGap(43, 43, 43)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton11)
-                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(jLabel11)
                         .addGap(35, 35, 35)
                         .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,13 +451,13 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
                 .addComponent(jLabel2)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -492,24 +486,30 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
 
+        jButton6.setText("Thêm vào giỏ hàng");
+
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        btnmoi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnmoi.setText("Làm mới");
+        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/AddFile_32x32.png"))); // NOI18N
+        jButton9.setText("Làm mới");
 
-        btnthanhtoan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnthanhtoan.setText("Thanh toán");
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Calculator.png"))); // NOI18N
+        jButton7.setText("Thanh toán");
 
-        btnxoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnxoa.setText("Xóa");
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Delete.png"))); // NOI18N
+        jButton8.setText("Xóa");
 
-        btnthem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnthem.setText("Thêm");
+        jButton10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anh/Add.png"))); // NOI18N
+        jButton10.setText("Thêm");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -518,23 +518,23 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnmoi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnthanhtoan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnxoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnthem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(btnmoi)
+                .addComponent(jButton9)
                 .addGap(23, 23, 23)
-                .addComponent(btnthem)
+                .addComponent(jButton10)
                 .addGap(18, 18, 18)
-                .addComponent(btnthanhtoan)
+                .addComponent(jButton7)
                 .addGap(18, 18, 18)
-                .addComponent(btnxoa)
+                .addComponent(jButton8)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -543,23 +543,30 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(952, Short.MAX_VALUE)
+                .addContainerGap(669, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(96, 96, 96)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 582, Short.MAX_VALUE)
+                    .addGap(0, 564, Short.MAX_VALUE)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 583, Short.MAX_VALUE)))
+                    .addGap(0, 565, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(jButton6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(372, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 361, Short.MAX_VALUE)
@@ -591,7 +598,7 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnThem_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThem_SanPhamActionPerformed
-        String TenSanPham, MaLoaiSanPham, GiaNhap, GiaBan, HangSanXuat, TonKho, TrangThai, Image, ChuThich;
+       
     }//GEN-LAST:event_btnThem_SanPhamActionPerformed
 
     private void tblSanPham1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPham1MouseClicked
@@ -605,16 +612,18 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnThem_SanPham;
-    private javax.swing.JButton btnmoi;
-    private javax.swing.JButton btnthanhtoan;
-    private javax.swing.JButton btnthem;
-    private javax.swing.JButton btnxoa;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -641,7 +650,6 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -661,49 +669,4 @@ public class Quanlynhanvien extends javax.swing.JInternalFrame implements  Nhanv
     private javax.swing.JTable tblSanPham1;
     private javax.swing.JTextField txtTonKho_SanPham3;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void LoadNhanvien() {
-         try {
-            model = (DefaultTableModel) tblSanPham1.getModel();
-            model.setRowCount(0);
-            list = NhanvienDAO.ListDanhsach("");
-            for (Nhanvien nv : list) {
-                Object[] a = new Object[]{
-                   nv.getManv(), nv.getTennv(),nv.getNgaysinh(),nv.getSodienthoai() ,nv.getLuong(),nv.getDiachi(),nv.getGioitinh()
-                };
-
-                model.addRow(a);
-
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, " Lỗi  " + e);
-
-        }
-     
-    }
-
-    @Override
-    public void them() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void sua() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void xoa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void search() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-   
 }

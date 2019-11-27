@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 25, 2019 8:40:32 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Hoadonchitiet" table="hoadonchitiet" schema="dbo" catalog="QLLT" optimistic-lock="version">
+        <id name="mahdct" type="int">
+            <column name="mahdct" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hoadon" class="model.Hoadon" fetch="select">
+            <column name="mahd" not-null="true" />
+        </many-to-one>
+        <many-to-one name="laptop" class="model.Laptop" fetch="select">
+            <column name="malaptop" not-null="true" />
+        </many-to-one>
+        <property name="soluong" type="java.lang.Integer">
+            <column name="soluong" />
+        </property>
+    </class>
+</hibernate-mapping>
